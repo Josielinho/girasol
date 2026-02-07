@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Romantic Sunflower Valentine's Design System */
+
+@layer base {
+  :root {
+    /* Warm romantic color palette with sunflower yellows */
+    --background: 45 60% 97%;
+    --foreground: 35 40% 18%;
+
+    --card: 45 50% 99%;
+    --card-foreground: 35 40% 18%;
+
+    --popover: 45 50% 99%;
+    --popover-foreground: 35 40% 18%;
+
+    /* Sunflower golden primary */
+    --primary: 45 90% 50%;
+    --primary-foreground: 35 50% 15%;
+
+    /* Warm cream secondary */
+    --secondary: 40 50% 94%;
+    --secondary-foreground: 35 40% 25%;
+
+    /* Muted warm tones */
+    --muted: 40 35% 92%;
+    --muted-foreground: 35 25% 40%;
+
+    /* Soft peach/coral accent */
+    --accent: 25 80% 85%;
+    --accent-foreground: 35 45% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 40% 85%;
+    --input: 40 40% 85%;
+    --ring: 45 90% 50%;
+
+    --radius: 1rem;
+
+    /* Custom sunflower & romantic colors */
+    --sunflower-bright: 48 95% 55%;
+    --sunflower-golden: 45 90% 50%;
+    --sunflower-deep: 40 85% 45%;
+    --sunflower-center: 30 70% 30%;
+    --cream: 45 60% 96%;
+    --warm-white: 40 50% 98%;
+    --rose-soft: 350 70% 88%;
+    --rose-medium: 350 60% 70%;
+    --heart-red: 0 75% 60%;
+    --terracotta: 20 60% 55%;
+    --sage: 80 25% 65%;
+    
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(45 70% 95%) 0%, hsl(40 60% 92%) 50%, hsl(35 50% 94%) 100%);
+    --gradient-sunflower: linear-gradient(180deg, hsl(48 95% 60%) 0%, hsl(40 90% 50%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(45 60% 97%) 0%, hsl(40 55% 93%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(45 80% 70%) 0%, hsl(25 70% 65%) 50%, hsl(350 60% 75%) 100%);
+  }
+
+  .dark {
+    --background: 35 30% 8%;
+    --foreground: 45 30% 95%;
+    --card: 35 30% 10%;
+    --card-foreground: 45 30% 95%;
+    --popover: 35 30% 10%;
+    --popover-foreground: 45 30% 95%;
+    --primary: 45 85% 55%;
+    --primary-foreground: 35 50% 10%;
+    --secondary: 35 25% 15%;
+    --secondary-foreground: 45 30% 90%;
+    --muted: 35 25% 18%;
+    --muted-foreground: 40 20% 60%;
+    --accent: 30 50% 25%;
+    --accent-foreground: 45 30% 95%;
+    --border: 35 25% 20%;
+    --input: 35 25% 20%;
+    --ring: 45 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lora', serif;
+  }
+}
+
+@layer components {
+  .font-romantic {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-body {
+    font-family: 'Lora', serif;
+  }
+
+  .text-gradient-romantic {
+    background: linear-gradient(135deg, hsl(45 90% 45%) 0%, hsl(35 80% 50%) 50%, hsl(350 60% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-sunflower {
+    background: linear-gradient(135deg, hsl(48 95% 50%) 0%, hsl(40 85% 45%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .bg-soft-gradient {
+    background: var(--gradient-warm);
+  }
+
+  .bg-sunset-gradient {
+    background: var(--gradient-sunset);
+  }
+
+  /* Floating hearts animation */
+  @keyframes float-heart {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 0.7;
+    }
+    25% {
+      transform: translateY(-20px) rotate(5deg) scale(1.05);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translateY(-35px) rotate(-3deg) scale(1);
+      opacity: 0.8;
+    }
+    75% {
+      transform: translateY(-15px) rotate(3deg) scale(1.02);
+      opacity: 0.85;
+    }
+  }
+
+  @keyframes float-up {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(350 70% 60% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(350 70% 60% / 0.5);
+    }
+  }
+
+  @keyframes gentle-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float-heart {
+    animation: float-heart 4s ease-in-out infinite;
+  }
+
+  .animate-float-up {
+    animation: float-up 15s linear infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gentle-bounce {
+    animation: gentle-bounce 2s ease-in-out infinite;
+  }
+
+  /* Polaroid style */
+  .polaroid {
+    @apply bg-white p-3 pb-12 shadow-xl;
+    transform: rotate(var(--rotation, 0deg));
+    transition: transform 0.3s ease;
+  }
+
+  .polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 10;
+  }
+
+  /* Music button styles */
+  .music-button {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300;
+    background: var(--gradient-sunflower);
+  }
+
+  .music-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px hsl(45 90% 50% / 0.5);
+  }
+
+  /* Romantic button styles with sunflower warmth */
+  .btn-romantic {
+    @apply px-8 py-4 rounded-full font-romantic text-xl transition-all duration-300;
+    background: var(--gradient-sunflower);
+    color: hsl(35 50% 15%);
+    box-shadow: 0 4px 20px hsl(45 90% 50% / 0.4);
+  }
+
+  .btn-romantic:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px hsl(45 90% 50% / 0.6);
+  }
+
+  .btn-romantic-secondary {
+    @apply px-8 py-4 rounded-full font-romantic text-xl transition-all duration-300 border-2;
+    border-color: hsl(350 60% 65%);
+    color: hsl(350 50% 40%);
+    background: hsl(350 70% 95%);
+  }
+
+  .btn-romantic-secondary:hover {
+    background: hsl(350 60% 90%);
+    transform: translateY(-3px);
+  }
+
+  /* Sunflower petal animation */
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  .animate-sway {
+    animation: sway 3s ease-in-out infinite;
+  }
+}
